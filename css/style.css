@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+i {
+  height: fit-content;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+nav img {
+  width: 11rem;
+  height: 2rem;
+}
+
+.resto-location {
+  display: flex;
+  justify-content: center;
+  background-color: #EAEAEA;
+  padding: 1rem 0;
+}
+.resto-location__container {
+  display: flex;
+  flex-flow: row;
+  width: fit-content;
+  align-items: center;
+}
+.resto-location__container h3 {
+  margin-left: 1rem;
+}
+
+.resto-catchphrase {
+  background-color: #F7F7F7;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 3rem;
+  text-align: center;
+  gap: 1rem;
+}
+.resto-catchphrase .btn {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  border-radius: 25px;
+  max-width: 25rem;
+  padding: 1.1rem 2rem;
+  color: white;
+}
+
+.resto-fonctio {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0;
+}
+.resto-fonctio__title {
+  width: 332.73px;
+  margin-bottom: 2rem;
+}
+.resto-fonctio__container {
+  display: grid;
+  align-self: center;
+  grid-template-rows: repeat(3, 1fr);
+  flex-flow: column;
+  gap: 1rem;
+}
+.resto-fonctio__card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-flow: row;
+  background-color: #F7F7F7;
+  padding: 1.8rem 4rem 1.8rem 0;
+  border-radius: 22px;
+}
+.resto-fonctio__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #9356DC;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  position: absolute;
+  left: -0.7rem;
+}
+.resto-fonctio i {
+  margin-left: 1.8rem;
+  margin-right: 1.8rem;
+  color: #7E7E7E;
+}
+
+.resto-choice {
+  background-color: #F7F7F7;
+}
+
+/*# sourceMappingURL=style.css.map */

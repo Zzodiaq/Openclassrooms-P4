@@ -1,0 +1,116 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3{
+    margin: 0;
+}
+
+i {
+    height: fit-content;
+}
+
+$primary : #9356DC;
+$secondary : #FF79DA;
+$tertiary : #99E2D0;
+$brightgrey : #F7F7F7;
+$darkgrey : #EAEAEA;
+$GreyTint4 : #7E7E7E;
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    img {
+        width: 11rem;
+        height: 2rem;
+    }
+}
+
+.resto-location {
+    display: flex;
+    justify-content: center;
+    background-color: $darkgrey;
+    padding: 1rem 0;
+    &__container {
+        display: flex;
+        flex-flow: row;
+        width: fit-content;
+        align-items: center;
+        h3 {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.resto-catchphrase {
+    background-color: $brightgrey;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 3rem;
+    text-align: center;
+    gap: 1rem;
+    .btn {
+        background: linear-gradient($secondary, $primary);
+        border: none;
+        border-radius: 25px;
+        max-width: 25rem;
+        padding: 1.1rem 2rem;
+        color: white;
+    }
+}
+
+.resto-fonctio {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 0;
+    &__title {
+        width: 332.73px;
+        margin-bottom: 2rem;
+    }
+    &__container {
+        display: grid;
+        align-self: center;
+        grid-template-rows: repeat(3, 1fr);
+        flex-flow: column;
+        gap: 1rem;
+    }
+    &__card {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-flow: row;
+        background-color: $brightgrey;
+        padding: 1.8rem 4rem 1.8rem 0;
+        border-radius: 22px;
+        // max-width: 500px;
+    }
+    &__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: $primary;
+        width: 25px;
+        height: 25px;
+        border-radius: 15px;
+        position: absolute;
+        left: -0.7rem;
+    }
+    i {
+        margin-left: 1.8rem;
+        margin-right: 1.8rem;
+        color: $GreyTint4;
+    }
+}
+
+.resto-choice {
+    background-color: $brightgrey;
+}
