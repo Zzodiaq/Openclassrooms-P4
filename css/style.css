@@ -3,10 +3,21 @@ body {
   padding: 0;
 }
 
-h1,
+p,
 h2,
-h3 {
+h3,
+h4 {
+  font-family: "Roboto", sans-serif;
   margin: 0;
+}
+
+h1 {
+  font-family: "Shrikhand", cursive;
+  margin: 0;
+}
+
+h4 {
+  font-weight: lighter;
 }
 
 i {
@@ -22,6 +33,16 @@ nav {
 nav img {
   width: 11rem;
   height: 2rem;
+}
+
+.btn, .resto-menu__bottom-button button {
+  background: linear-gradient(#FF79DA, #9356DC);
+  border: none;
+  border-radius: 25px;
+  max-width: 25rem;
+  padding: 1rem 2rem;
+  color: white;
+  cursor: pointer;
 }
 
 .resto-location {
@@ -49,13 +70,8 @@ nav img {
   text-align: center;
   gap: 1rem;
 }
-.resto-catchphrase .btn {
-  background: linear-gradient(#FF79DA, #9356DC);
-  border: none;
-  border-radius: 25px;
-  max-width: 25rem;
-  padding: 1.1rem 2rem;
-  color: white;
+.resto-catchphrase h3 {
+  font-weight: lighter;
 }
 
 .resto-fonctio {
@@ -131,6 +147,7 @@ nav img {
   flex-flow: column;
   border-radius: 15px;
   background-color: white;
+  box-shadow: rgba(145, 145, 145, 0.4) 0px 4px 8px;
   position: relative;
 }
 .resto-choice__card img {
@@ -140,9 +157,13 @@ nav img {
   object-fit: cover;
   aspect-ratio: 16/9;
 }
+.resto-choice__card h3 {
+  font-size: 1rem;
+}
 .resto-choice__card-description {
   display: flex;
   flex-flow: row;
+  padding: 1rem;
 }
 .resto-choice__description-title {
   display: flex;
@@ -150,9 +171,141 @@ nav img {
   width: 50%;
   height: 100%;
 }
+.resto-choice__description-title p {
+  margin-bottom: 0.5rem;
+}
 .resto-choice__heart {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   width: 50%;
   height: 100%;
+  padding-right: 1rem;
+  background-color: white;
+}
+.resto-choice__heart .fa-heart {
+  position: relative;
+}
+.resto-choice__heart .image-heart {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.8rem;
+  display: none;
+}
+.resto-choice__heart .fa-heart:checked {
+  display: none;
+}
+.resto-choice__heart .fa-heart:checked + .image-heart {
+  display: block;
+}
+
+footer {
+  background-color: #353535;
+  padding: 1.5rem;
+  color: white;
+  gap: 1rem;
+}
+footer img {
+  width: 6rem;
+  height: 1rem;
+  margin-bottom: 0.6rem;
+}
+footer .image-color {
+  filter: brightness(0) invert(1);
+}
+footer .footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+footer .footer-text i {
+  margin-right: 0.8rem;
+}
+footer .footer-text .fa-2xs {
+  margin-right: 0.65rem;
+}
+
+.fa-arrow-left {
+  position: absolute;
+  left: 1rem;
+}
+
+.resto-menu__out {
+  position: relative;
+}
+.resto-menu__title {
+  position: relative;
+  z-index: 1;
+}
+.resto-menu__title img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.resto-menu__card-container-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  z-index: 2;
+  position: relative;
+  margin-top: -35px;
+  padding-top: 30px;
+  background-color: #F7F7F7;
+  border-radius: 30px 30px 0 0;
+}
+.resto-menu__card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #F7F7F7;
+  padding: 0 1rem;
+  padding-top: 2.2rem;
+}
+.resto-menu__heart {
+  padding-right: 0.6rem;
+  margin-bottom: 2.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.resto-menu__green-dash {
+  height: 3px;
+  width: 3rem;
+  background-color: #99E2D0;
+}
+.resto-menu__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  box-shadow: rgba(145, 145, 145, 0.4) 0px 4px 8px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.resto-menu__card-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.resto-menu__card-price h4 {
+  font-size: 0.8rem;
+}
+.resto-menu__bottom-button {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.resto-menu__bottom-button button {
+  padding: 1rem 3.2rem;
 }
 
 /*# sourceMappingURL=style.css.map */
