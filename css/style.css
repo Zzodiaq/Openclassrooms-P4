@@ -24,6 +24,51 @@ i {
   height: fit-content;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 100;
+  animation: fade 1s forwards;
+  visibility: visible;
+}
+#loader-container .loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #9356DC;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 nav {
   display: flex;
   justify-content: center;
