@@ -1,0 +1,96 @@
+@media screen and (min-width: 768px) {
+  .resto-choice__container {
+    grid-template-columns: repeat(2, 2fr);
+    grid-template-rows: none;
+  }
+  footer {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.8rem;
+    height: 4rem;
+  }
+  footer .footer-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  footer .footer-text .fa-2xs {
+    margin-left: 1rem;
+  }
+  footer img {
+    margin: 0 1rem 0 2rem;
+  }
+  footer p {
+    margin-left: 1.5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .resto-fonctio {
+    display: grid;
+    grid-template-rows: 0.1fr 1fr;
+  }
+  .resto-fonctio__container {
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+  .resto-fonctio__card {
+    padding: 1.8rem 2rem 1.8rem 0;
+  }
+  .resto-choice__container {
+    grid-template-columns: repeat(2, 3fr);
+    row-gap: 4rem;
+    column-gap: 7rem;
+    grid-template-rows: none;
+  }
+  .resto-catchphrase h2 {
+    font-size: 2rem;
+  }
+  .resto-catchphrase h3 {
+    font-size: 0.8rem;
+  }
+  .resto-menu__heart {
+    padding-right: 0;
+    margin-bottom: 2.2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .resto-menu__heart i {
+    margin-left: 1rem;
+  }
+  .resto-menu .middle {
+    margin: auto;
+    max-width: 1000px;
+  }
+  .resto-menu__title img {
+    width: 100%;
+    height: 30rem;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+  }
+  .resto-menu__card-container-1 {
+    padding: 0 8rem;
+    padding-top: 1rem;
+  }
+  .resto-menu__card-container {
+    padding: 0 8rem;
+    padding-top: 2.2rem;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .resto-fonctio__container {
+    grid-template-rows: none;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 0;
+  }
+  .resto-fonctio__card {
+    padding: 1.8rem 3rem 1.8rem 0;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */

@@ -40,7 +40,7 @@ a {
   left: 0;
   background-color: #fff;
   z-index: 100;
-  animation: fade 1s forwards;
+  animation: fade 3s forwards;
   visibility: visible;
 }
 #loader-container .loader {
@@ -49,7 +49,7 @@ a {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: spin 2s linear infinite;
+  animation: spin 3s linear infinite;
 }
 @keyframes spin {
   0% {
@@ -64,7 +64,6 @@ a {
     opacity: 1;
   }
   100% {
-    opacity: 0;
     visibility: hidden;
   }
 }
@@ -167,6 +166,9 @@ nav img {
 .resto-choice {
   padding: 4rem 2rem;
   background-color: #F7F7F7;
+  display: grid;
+  grid-template-rows: 0.1fr 4fr;
+  justify-content: center;
 }
 .resto-choice__title {
   margin-bottom: 1.2rem;
@@ -174,6 +176,7 @@ nav img {
 .resto-choice__container {
   display: grid;
   grid-template-rows: repeat(4, 2fr);
+  justify-content: center;
   gap: 1.5rem;
 }
 .resto-choice__new {
@@ -194,6 +197,7 @@ nav img {
   background-color: white;
   box-shadow: rgba(145, 145, 145, 0.4) 0px 4px 8px;
   position: relative;
+  max-width: 500px;
 }
 .resto-choice__card img {
   border-radius: 15px 15px 0 0;
@@ -278,6 +282,9 @@ footer .footer-text .fa-2xs {
   left: 1rem;
 }
 
+.resto-menu .middle {
+  background-color: #F7F7F7;
+}
 .resto-menu__out {
   position: relative;
 }
@@ -306,7 +313,6 @@ footer .footer-text .fa-2xs {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: #F7F7F7;
   padding: 0 1rem;
   padding-top: 2.2rem;
 }
@@ -331,21 +337,26 @@ footer .footer-text .fa-2xs {
   background-color: white;
   border-radius: 15px;
   padding: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .resto-menu__card-price {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .resto-menu__card-price h4 {
   font-size: 0.8rem;
+  text-overflow: ellipsis;
+}
+.resto-menu__card-price h3 {
+  text-overflow: ellipsis;
 }
 .resto-menu__bottom-button {
-  margin: 2rem 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem 0;
   display: flex;
   justify-content: center;
 }
