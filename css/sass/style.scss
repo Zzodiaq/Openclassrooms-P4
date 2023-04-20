@@ -248,12 +248,12 @@ nav {
         i {
             position: absolute;
             z-index: 10;
-        }
-        &:hover i {
-            display: none;
-        }
-        &:hover .img-heart {
-            display: block;
+            &:hover {
+                display: none;
+            }
+            &:hover .img-heart {
+                display: block;
+            }
         }
         .img-heart {
             display: none;

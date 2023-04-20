@@ -242,10 +242,10 @@ nav img {
   position: absolute;
   z-index: 10;
 }
-.resto-choice__heart:hover i {
+.resto-choice__heart i:hover {
   display: none;
 }
-.resto-choice__heart:hover .img-heart {
+.resto-choice__heart i:hover .img-heart {
   display: block;
 }
 .resto-choice__heart .img-heart {
