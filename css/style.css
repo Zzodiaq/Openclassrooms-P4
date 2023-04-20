@@ -6,7 +6,8 @@ body {
 p,
 h2,
 h3,
-h4 {
+h4,
+span {
   font-family: "Roboto", sans-serif;
   margin: 0;
 }
@@ -61,7 +62,7 @@ a {
 }
 @keyframes fade {
   0% {
-    opacity: 1;
+    visibility: visible;
   }
   100% {
     visibility: hidden;
@@ -89,6 +90,10 @@ nav img {
   cursor: pointer;
 }
 
+.btn:hover, .resto-menu__bottom-button button:hover {
+  filter: brightness(1.2);
+}
+
 .resto-location {
   display: flex;
   justify-content: center;
@@ -112,7 +117,7 @@ nav img {
   align-items: center;
   padding: 3rem;
   text-align: center;
-  gap: 1rem;
+  gap: 3rem;
 }
 .resto-catchphrase h3 {
   font-weight: lighter;
@@ -191,6 +196,8 @@ nav img {
   top: 0.8rem;
 }
 .resto-choice__card {
+  z-index: 1;
+  position: relative;
   display: flex;
   flex-flow: column;
   border-radius: 15px;
@@ -219,36 +226,32 @@ nav img {
   flex-flow: column;
   width: 50%;
   height: 100%;
+  gap: 0.5rem;
 }
 .resto-choice__description-title p {
   margin-bottom: 0.5rem;
 }
 .resto-choice__heart {
-  position: relative;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
   width: 50%;
-  height: 100%;
   padding-right: 1rem;
-  background-color: white;
 }
-.resto-choice__heart .fa-heart {
-  position: relative;
+.resto-choice__heart i {
+  position: absolute;
+  z-index: 10;
 }
-.resto-choice__heart .image-heart {
+.resto-choice__heart:hover i {
+  display: none;
+}
+.resto-choice__heart:hover .img-heart {
+  display: block;
+}
+.resto-choice__heart .img-heart {
+  display: none;
   width: 26px;
   height: 26px;
-  position: absolute;
-  top: 0.5rem;
-  right: 0.8rem;
-  display: none;
-}
-.resto-choice__heart .fa-heart:checked {
-  display: none;
-}
-.resto-choice__heart .fa-heart:checked + .image-heart {
-  display: block;
 }
 
 footer {
@@ -317,6 +320,7 @@ footer .footer-text .fa-2xs {
   padding-top: 2.2rem;
 }
 .resto-menu__heart {
+  margin-top: 3rem;
   padding-right: 0.6rem;
   margin-bottom: 2.2rem;
   display: flex;
@@ -329,16 +333,75 @@ footer .footer-text .fa-2xs {
   width: 3rem;
   background-color: #99E2D0;
 }
-.resto-menu__card {
+.resto-menu--coche {
+  border-radius: 0 15px 15px 0;
+  width: 70px;
+  background-color: #99E2D0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.resto-menu--coche i {
+  color: white;
+}
+@keyframes roll-in {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+  100% {
+    width: 70px;
+    opacity: 1;
+  }
+}
+.resto-menu__card-left {
   display: flex;
   flex-direction: column;
+  margin: 1rem;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.resto-menu__card {
+  display: grid;
+  grid-template-columns: 4fr 0fr;
   gap: 0.3rem;
   box-shadow: rgba(145, 145, 145, 0.4) 0px 4px 8px;
   background-color: white;
   border-radius: 15px;
-  padding: 1rem;
-  overflow: hidden;
-  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.resto-menu__card:hover .resto-menu--coche {
+  display: flex;
+  animation: roll-in 1s ease;
+}
+.resto-menu .resto-menu__card:nth-child(1) {
+  animation: appear-card 0.5s ease 0.25s forwards;
+}
+.resto-menu .resto-menu__card:nth-child(2) {
+  animation: appear-card 0.5s ease 0.5s forwards;
+}
+.resto-menu .resto-menu__card:nth-child(3) {
+  animation: appear-card 0.5s ease 0.75s forwards;
+}
+.resto-menu .resto-menu__card:nth-child(4) {
+  animation: appear-card 0.5s ease 1s forwards;
+}
+.resto-menu .resto-menu__card:nth-child(5) {
+  animation: appear-card 0.5s ease 1.25s forwards;
+}
+@keyframes appear-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .resto-menu__card-price {
   display: flex;

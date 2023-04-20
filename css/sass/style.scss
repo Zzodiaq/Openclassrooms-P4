@@ -3,10 +3,12 @@ body {
     padding: 0;
 }
 
+
 p,
 h2,
 h3,
-h4{
+h4,
+span{
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
@@ -66,7 +68,7 @@ $brightBlack : #353535;
           
           @keyframes fade {
             0% {
-              opacity: 1;
+              visibility: visible;
             }
             100% {
               visibility: hidden;
@@ -96,6 +98,10 @@ nav {
     cursor: pointer;
 }
 
+.btn:hover {
+    filter: brightness(1.20);
+}
+
 .resto-location {
     display: flex;
     justify-content: center;
@@ -119,7 +125,7 @@ nav {
     align-items: center;
     padding: 3rem;
     text-align: center;
-    gap: 1rem;
+    gap: 3rem;
     h3 {
         font-weight: lighter;
     }
@@ -198,6 +204,8 @@ nav {
         top: 0.8rem;
     }
     &__card {
+        z-index: 1;
+        position: relative;
         display: flex;
         flex-flow: column;
         border-radius: 15px;
@@ -226,54 +234,32 @@ nav {
         flex-flow: column;
         width: 50%;
         height: 100%;
+        gap: 0.5rem;
         p {
             margin-bottom: 0.5rem;
         }
     }
     &__heart {
-        position: relative;
         display: flex;
-        justify-content: flex-end;
         align-items: center;
+        justify-content: flex-end;
         width: 50%;
-        height: 100%;
         padding-right: 1rem;
-        background-color: white;
-        .fa-heart {
-            position: relative;
-          }
-          
-        .image-heart {
-            width: 26px;
-            height: 26px;
+        i {
             position: absolute;
-            top: 0.5rem;
-            right: 0.8rem;
-            display: none;
-          }
-
-        .fa-heart:checked {
+            z-index: 10;
+        }
+        &:hover i {
             display: none;
         }
-          
-        .fa-heart:checked + .image-heart {
+        &:hover .img-heart {
             display: block;
-          }
-        // .fa-heart {
-        //     cursor: pointer;
-        //     // background-color:linear-gradient($secondary, $primary);
-        //     &:hover {
-        //         display: none;
-        //     }
-        // }
-        // img {
-        //     width: 26px;
-        //     height: 26px;
-        //     display: none;
-        //     &:hover {
-        //         display: block;
-        //     }
-        // }
+        }
+        .img-heart {
+            display: none;
+            width: 26px;
+            height: 26px;
+        }
     }
 } 
 
@@ -312,6 +298,7 @@ footer {
 }
 
 .resto-menu {
+
     .middle {
         background-color: $brightgrey;
     }
@@ -347,6 +334,7 @@ footer {
         padding-top: 2.2rem;
     }
     &__heart {
+        margin-top: 3rem;
         padding-right: 0.6rem;
         margin-bottom: 2.2rem;
         display: flex;
@@ -359,16 +347,70 @@ footer {
         width: 3rem;
         background-color: $brightgreen;
     }
-    &__card {
+    &--coche {
+        border-radius: 0 15px 15px 0;
+        width: 70px;
+        background-color: $brightgreen;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        i {
+            color: white;
+        }
+        cursor: pointer;
+    }
+    @keyframes roll-in {
+        0% {
+          opacity: 0;
+          width: 0px;
+        }
+        100% {
+          width: 70px;  
+          opacity: 1;
+        }
+    }
+    &__card-left {
         display: flex;
         flex-direction: column;
+        margin: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    &__card {
+        display: grid;
+        grid-template-columns: 4fr 0fr;
         gap: 0.3rem;
         box-shadow: rgb(145, 145, 145, 0.4) 0px 4px 8px;
         background-color: white;
         border-radius: 15px;
-        padding: 1rem;
-        overflow: hidden;
-        white-space: nowrap;
+        cursor: pointer;
+
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+
+        &:hover .resto-menu--coche {
+            display: flex;
+            animation: roll-in 1s ease;
+        }
+    }
+
+
+    @for $i from 1 through 5 {
+        .resto-menu__card:nth-child(#{$i}) {
+            animation: appear-card 0.5s ease #{$i * 0.25}s forwards;
+        }
+    }
+
+    @keyframes appear-card {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     &__card-price {
         display: flex;
@@ -382,9 +424,6 @@ footer {
         h3 {
             text-overflow: ellipsis;
         }
-    }
-    &__card:hover {
-
     }
     &__bottom-button {
         width: 100%;
