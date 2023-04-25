@@ -72,6 +72,9 @@
   .resto-menu__heart i {
     margin-left: 1rem;
   }
+  .resto-menu__heart img {
+    margin-left: 1rem;
+  }
   .resto-menu .middle {
     margin: auto;
     max-width: 1000px;

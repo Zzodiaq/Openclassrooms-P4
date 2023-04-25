@@ -256,8 +256,11 @@ nav {
 }
 
 .resto-choice--hover {
-    cursor: pointer;
-    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
     &:hover a{
         pointer-events: none;
     }
@@ -266,9 +269,6 @@ nav {
     }
     &:hover .img-heart {
         display: flex;
-    }
-    &:hover #link{
-        pointer-events: none;
     }
 }
 
@@ -350,9 +350,6 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        img {
-            margin-left: 1rem;
-        }
     }
     &__green-dash {
         height: 3px;
@@ -429,7 +426,6 @@ footer {
             right: 80px;
         }
     }
-
 
     @for $i from 1 through 5 {
         .resto-menu__card:nth-child(#{$i}) {

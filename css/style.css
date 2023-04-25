@@ -247,8 +247,11 @@ nav img {
 }
 
 .resto-choice--hover {
-  cursor: pointer;
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
 }
 .resto-choice--hover:hover a {
   pointer-events: none;
@@ -258,9 +261,6 @@ nav img {
 }
 .resto-choice--hover:hover .img-heart {
   display: flex;
-}
-.resto-choice--hover:hover #link {
-  pointer-events: none;
 }
 
 footer {
@@ -336,9 +336,6 @@ footer .footer-text .fa-2xs {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-.resto-menu__heart img {
-  margin-left: 1rem;
 }
 .resto-menu__green-dash {
   height: 3px;
