@@ -25,6 +25,15 @@
   footer p {
     margin-left: 1.5rem;
   }
+  .resto-menu__card-price h4 {
+    text-overflow: initial;
+  }
+  .resto-menu__card-left h3 {
+    text-overflow: initial;
+  }
+  .resto-menu__card:hover .resto-menu__card-left {
+    width: auto;
+  }
 }
 @media screen and (min-width: 1024px) {
   .resto-fonctio {

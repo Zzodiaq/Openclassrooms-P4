@@ -52,6 +52,7 @@ $brightBlack : #353535;
     left: 0;
     background-color: #fff;
     z-index: 100;
+    opacity: 0.5;
     animation: fade 3s forwards;
     visibility: visible;
     .loader {
@@ -191,6 +192,9 @@ nav {
         grid-template-rows: repeat(4, 2fr);
         justify-content: center;
         gap: 1.5rem;
+        a {
+            position: relative;
+        }
     }
     &__new {
         border-radius: 2px;
@@ -204,14 +208,11 @@ nav {
         top: 0.8rem;
     }
     &__card {
-        z-index: 1;
-        position: relative;
         display: flex;
         flex-flow: column;
         border-radius: 15px;
         background-color: white;
         box-shadow: rgb(145, 145, 145, 0.4) 0px 4px 8px;
-        position: relative;
         max-width: 500px;
         img {
             border-radius: 15px 15px 0 0;
@@ -245,23 +246,31 @@ nav {
         justify-content: flex-end;
         width: 50%;
         padding-right: 1rem;
-        i {
-            position: absolute;
-            z-index: 10;
-            &:hover {
-                display: none;
-            }
-            &:hover .img-heart {
-                display: block;
-            }
-        }
-        .img-heart {
-            display: none;
-            width: 26px;
-            height: 26px;
-        }
     }
-} 
+}
+
+.img-heart {
+    display: none;
+    width: 25px;
+    height: 25px;
+}
+
+.resto-choice--hover {
+    cursor: pointer;
+    width: fit-content;
+    &:hover a{
+        pointer-events: none;
+    }
+    &:hover i {
+        display: none;
+    }
+    &:hover .img-heart {
+        display: flex;
+    }
+    &:hover #link{
+        pointer-events: none;
+    }
+}
 
 footer {
     background-color: $brightBlack;
@@ -341,6 +350,9 @@ footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        img {
+            margin-left: 1rem;
+        }
     }
     &__green-dash {
         height: 3px;
@@ -369,14 +381,29 @@ footer {
           opacity: 1;
         }
     }
+
+    @keyframes roll-in-p {
+        0% {
+            right: 0;
+        }
+        100% {
+            right: 80px; 
+        }
+    }
     &__card-left {
+        white-space: nowrap;
         display: flex;
         flex-direction: column;
         margin: 1rem;
-        overflow: hidden;
-        white-space: nowrap;
+        h3 {
+            font-size: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
     }
     &__card {
+        position: relative;
         display: grid;
         grid-template-columns: 4fr 0fr;
         gap: 0.3rem;
@@ -392,6 +419,14 @@ footer {
         &:hover .resto-menu--coche {
             display: flex;
             animation: roll-in 1s ease;
+        }
+        &:hover .resto-menu__card-left {
+            width: 150px;
+        }
+        &:hover .resto-menu__card-price p {
+            animation: roll-in-p 1s ease;
+            position: absolute;
+            right: 80px;
         }
     }
 
@@ -419,9 +454,8 @@ footer {
         justify-content: space-between;
         h4 {
             font-size: 0.8rem;
-            text-overflow: ellipsis;
-        }
-        h3 {
+            overflow: hidden;
+            white-space: nowrap;
             text-overflow: ellipsis;
         }
     }

@@ -26,6 +26,23 @@
              margin-left: 1.5rem;
          }
      }
+     .resto-menu {
+        &__card-price {
+            h4 {
+                text-overflow:initial;
+            }
+        }
+        &__card-left {
+            h3 {
+                text-overflow:initial;
+            }
+        }
+        &__card {
+            &:hover .resto-menu__card-left {
+                width: auto;
+            }
+        }
+     }
 }
 
 @media screen and (min-width: 1024px) {

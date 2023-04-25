@@ -41,6 +41,7 @@ a {
   left: 0;
   background-color: #fff;
   z-index: 100;
+  opacity: 0.5;
   animation: fade 3s forwards;
   visibility: visible;
 }
@@ -184,6 +185,9 @@ nav img {
   justify-content: center;
   gap: 1.5rem;
 }
+.resto-choice__container a {
+  position: relative;
+}
 .resto-choice__new {
   border-radius: 2px;
   padding: 0.3rem 0.6rem;
@@ -196,14 +200,11 @@ nav img {
   top: 0.8rem;
 }
 .resto-choice__card {
-  z-index: 1;
-  position: relative;
   display: flex;
   flex-flow: column;
   border-radius: 15px;
   background-color: white;
   box-shadow: rgba(145, 145, 145, 0.4) 0px 4px 8px;
-  position: relative;
   max-width: 500px;
 }
 .resto-choice__card img {
@@ -238,20 +239,28 @@ nav img {
   width: 50%;
   padding-right: 1rem;
 }
-.resto-choice__heart i {
-  position: absolute;
-  z-index: 10;
+
+.img-heart {
+  display: none;
+  width: 25px;
+  height: 25px;
 }
-.resto-choice__heart i:hover {
+
+.resto-choice--hover {
+  cursor: pointer;
+  width: fit-content;
+}
+.resto-choice--hover:hover a {
+  pointer-events: none;
+}
+.resto-choice--hover:hover i {
   display: none;
 }
-.resto-choice__heart i:hover .img-heart {
-  display: block;
+.resto-choice--hover:hover .img-heart {
+  display: flex;
 }
-.resto-choice__heart .img-heart {
-  display: none;
-  width: 26px;
-  height: 26px;
+.resto-choice--hover:hover #link {
+  pointer-events: none;
 }
 
 footer {
@@ -328,6 +337,9 @@ footer .footer-text .fa-2xs {
   justify-content: space-between;
   align-items: center;
 }
+.resto-menu__heart img {
+  margin-left: 1rem;
+}
 .resto-menu__green-dash {
   height: 3px;
   width: 3rem;
@@ -355,14 +367,28 @@ footer .footer-text .fa-2xs {
     opacity: 1;
   }
 }
+@keyframes roll-in-p {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 80px;
+  }
+}
 .resto-menu__card-left {
+  white-space: nowrap;
   display: flex;
   flex-direction: column;
   margin: 1rem;
+}
+.resto-menu__card-left h3 {
+  font-size: 1rem;
   overflow: hidden;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .resto-menu__card {
+  position: relative;
   display: grid;
   grid-template-columns: 4fr 0fr;
   gap: 0.3rem;
@@ -377,6 +403,14 @@ footer .footer-text .fa-2xs {
 .resto-menu__card:hover .resto-menu--coche {
   display: flex;
   animation: roll-in 1s ease;
+}
+.resto-menu__card:hover .resto-menu__card-left {
+  width: 150px;
+}
+.resto-menu__card:hover .resto-menu__card-price p {
+  animation: roll-in-p 1s ease;
+  position: absolute;
+  right: 80px;
 }
 .resto-menu .resto-menu__card:nth-child(1) {
   animation: appear-card 0.5s ease 0.25s forwards;
@@ -411,9 +445,8 @@ footer .footer-text .fa-2xs {
 }
 .resto-menu__card-price h4 {
   font-size: 0.8rem;
-  text-overflow: ellipsis;
-}
-.resto-menu__card-price h3 {
+  overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 .resto-menu__bottom-button {
