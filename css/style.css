@@ -244,6 +244,7 @@ nav img {
   display: none;
   width: 25px;
   height: 25px;
+  opacity: 1;
 }
 
 .resto-choice--hover {
@@ -260,9 +261,18 @@ nav img {
   display: none;
 }
 .resto-choice--hover:hover .img-heart {
+  animation: img-appear 2s ease-in-out;
   display: flex;
 }
 
+@keyframes img-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 footer {
   background-color: #353535;
   padding: 1.5rem;
